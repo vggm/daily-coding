@@ -1,6 +1,6 @@
 # Daily Coding Problems
 
-[`Day 1`](./problems/%23Day1.py) | EASY | **Google**
+[`Day 1`](./problems/Day1.py) | EASY | **Google**
 
 Given a list of numbers and a number k, retum whether any two numbers from the list add up to k
   
@@ -10,7 +10,7 @@ Bonus: Can you do this in one pass?
 
 ***
 
-[`Day 2`](./problems/%23Day2.py) | HARD | **Uber**
+[`Day 2`](./problems/Day2.py) | HARD | **Uber**
 
 Given an array of integers, return a new array such that each element at index i of the new array is the product of all the numbers in the original array except the one at i.
 
@@ -20,7 +20,7 @@ For example, if our input was [1, 2, 3, 4, 5], the expected output would be [120
 
 ***
 
-[`Day 3`](./problems/%23Day3.py) | MEDIUM | **Google**
+[`Day 3`](./problems/Day3.py) | MEDIUM | **Google**
 
 Given the root to a binary tree, implement serialize(root), which serializes the tree into a string, and deserialize(s), which deserializes the string back into the tree.
 
@@ -43,7 +43,7 @@ assert deserialize(serialize(node)).left.left.val == 'left.left'
 
 ***
 
-[`Day 4`](./problems/%23Day4.py) | HARD | **Stripe**
+[`Day 4`](./problems/Day4.py) | HARD | **Stripe**
 
 Given an array of integers, find the first missing positive integer in linear time and constant space. In other words, find the lowest positive integer that does not exist in the array. The array can contain duplicates and negative numbers as well.
 
@@ -53,7 +53,7 @@ You can modify the input array in-place.
 
 ***
 
-[`Day 5`](./problems/%23Day5.py) | HARD | **Jane Street**
+[`Day 5`](./problems/Day5.py) | HARD | **Jane Street**
 
 ```cons(a, b)``` constructs a ```pair```, and ```car(pair)``` and ```cdr(pair)``` returns the first and last element of that pair. For example, ```car(cons(3, 4))``` returns ```3```, and ```cdr(cons(3, 4))``` returns ```4```.
 
