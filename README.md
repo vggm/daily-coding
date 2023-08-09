@@ -70,7 +70,7 @@ Implement ```car``` and ```cdr```.
 
 ***
 
-[`Day 12`](./problems/Day5.py) | HARD | **Amazon**
+[`Day 12`](./problems/Day12.py) | HARD | **Amazon**
 
 There exists a staircase with N steps, and you can climb up either 1 or 2 steps at a time. Given N, write a function that returns the number of unique ways you can climb the staircase. The order of the steps matters.
 
@@ -86,7 +86,7 @@ What if, instead of being able to climb 1 or 2 steps at a time, you could climb 
 
 ***
 
-[`Day 16`](./problems/Day5.py) | EASY | **Twitter**
+[`Day 16`](./problems/Day16.py) | EASY | **Twitter**
 
 You run an e-commerce website and want to record the last ```N order ids``` in a log. Implement a data structure to accomplish this, with the following API:
 
