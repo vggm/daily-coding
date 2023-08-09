@@ -69,3 +69,30 @@ def cons(a, b):
 Implement ```car``` and ```cdr```.
 
 ***
+
+[`Day 12`](./problems/Day5.py) | HARD | **Amazon**
+
+There exists a staircase with N steps, and you can climb up either 1 or 2 steps at a time. Given N, write a function that returns the number of unique ways you can climb the staircase. The order of the steps matters.
+
+For example, if N is 4, then there are 5 unique ways:
+
+* 1, 1, 1, 1
+* 2, 1, 1
+* 1, 2, 1
+* 1, 1, 2
+* 2, 2
+
+What if, instead of being able to climb 1 or 2 steps at a time, you could climb any number from a set of positive integers X? For example, if X = {1, 3, 5}, you could climb 1, 3, or 5 steps at a time.
+
+***
+
+[`Day 16`](./problems/Day5.py) | EASY | **Twitter**
+
+You run an e-commerce website and want to record the last ```N order ids``` in a log. Implement a data structure to accomplish this, with the following API:
+
+* ```record(order_id):``` adds the order_id to the log
+* ```get_last(i):``` gets the ith last element from the log. i is guaranteed to be smaller than or equal to N.
+
+You should be as efficient with time and space as possible.
+
+***
