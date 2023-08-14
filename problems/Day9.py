@@ -37,3 +37,8 @@ if __name__ == '__main__':
   sol = 10
   s = solve(nums)
   assert s == sol, f"Expected {sol}, but got {s}"
+  
+  nums = [1, 5, 7, 5, 1]
+  sol = 10
+  s = solve(nums)
+  assert s == sol, f"Expected {sol}, but got {s}"
