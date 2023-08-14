@@ -8,6 +8,8 @@ In this example, assume nodes with the same value are the exact same node object
 Do this in O(M + N) time (where M and N are the lengths of the lists) and constant space.
 """
 
+from Solver import TestSolver
+
 
 class Node:
   def __init__(self, value: int, next = None, prev = None) -> None:
@@ -74,6 +76,9 @@ def solve( a: LinkedList, b: LinkedList ) -> int:
 
 
 if __name__ == '__main__':
+  
+  Solver = TestSolver(False)
+  
   a = LinkedList()
   a.insert(3)
   a.insert(7)
@@ -86,9 +91,7 @@ if __name__ == '__main__':
   b.insert(8)
   b.insert(10)
   
-  sol = solve(a, b)
-  assert sol == 8, f"Expected 8, but got {sol}."
-  
+  Solver.solve(solve, a, b, expected=8)
   
   a = LinkedList()
   a.insert(3)
@@ -102,9 +105,7 @@ if __name__ == '__main__':
   b.insert(3)
   b.insert(10)
   
-  sol = solve(a, b)
-  assert sol == -1, f"Expected 8, but got {sol}."
-  
+  Solver.solve(solve, a, b, expected=-1)
   
   a = LinkedList()
   a.insert(3)
@@ -117,5 +118,6 @@ if __name__ == '__main__':
   b.insert(8)
   b.insert(10)
   
-  sol = solve(a, b)
-  assert sol == -1, f"Expected 8, but got {sol}."
+  Solver.solve(solve, a, b, expected=-1)
+  
+  Solver.show_tests()
