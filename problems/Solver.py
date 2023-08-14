@@ -38,10 +38,13 @@ class TestSolver(Solver):
   def __init__(self, show=True) -> None:
     super().__init__()
     self.show_prints = show
+    
+  def printc( self, s: str ):
+    if self.show_prints:
+      print(s)
   
   def solve( self, func, *args, **kwargs ):
-    if self.show_prints:
-      print(f'### Case {self.cases} ###')
+    self.printc(f'### Case {self.cases} ###')
     
     start = time()
     sol = func(*args)
@@ -50,9 +53,8 @@ class TestSolver(Solver):
     
     result = CORRECT if sol == kwargs['expected'] else FAIL
     
-    if self.show_prints:
-      print(f'{result} {sol}') 
-      print(f'--> Time {time_spend:.3f}ms. <--\n')
+    self.printc(f'{result} {sol}') 
+    self.printc(f'--> Time {time_spend:.3f}ms. <--\n')
       
     self.cases += 1
     self.tests.append((result, sol, time_spend))

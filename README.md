@@ -4,7 +4,7 @@
 
 Given a list of numbers and a number k, return whether any two numbers from the list add up to k.
 
-For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
+For example, given ``[10, 15, 3, 7]`` and ``k of 17``, return true since ``10 + 7`` is 17.
 
 ***Bonus: Can you do this in one pass?***
 
@@ -72,7 +72,7 @@ Implement ```car``` and ```cdr```.
 
 [`Day 12`](./problems/Day12.py) | HARD | **Amazon**
 
-There exists a staircase with N steps, and you can climb up either 1 or 2 steps at a time. Given N, write a function that returns the number of unique ways you can climb the staircase. The order of the steps matters.
+There exists a staircase with ``N steps``, and you can climb up either ``1 or 2 steps at a time``. Given N, write a function that returns the number of unique ways you can climb the staircase. The order of the steps matters.
 
 For example, if N is 4, then there are 5 unique ways:
 
@@ -82,7 +82,17 @@ For example, if N is 4, then there are 5 unique ways:
 * 1, 1, 2
 * 2, 2
 
-What if, instead of being able to climb 1 or 2 steps at a time, you could climb any number from a set of positive integers X? For example, if X = {1, 3, 5}, you could climb 1, 3, or 5 steps at a time.
+***What if, instead of being able to climb 1 or 2 steps at a time, you could climb any number from a set of positive integers X?***
+
+For example, if ``X = {1, 3, 5}``, you could climb 1, 3, or 5 steps at a time.
+
+***
+
+[`Day 13`](./problems/Day13.py) | HARD | **Amazon**
+
+Given an ``integer k`` and a ``string s``, find the length of the longest substring that contains at most k distinct characters.
+
+For example, given ``s = "abcba"`` and ``k = 2``, the longest substring with k distinct characters is ``"bcb"``.
 
 ***
 
@@ -90,7 +100,7 @@ What if, instead of being able to climb 1 or 2 steps at a time, you could climb 
 
 The area of a circle is defined as πr^2. Estimate π to 3 decimal places using a Monte Carlo method.
 
-***Hint: The basic equation of a circle is x<sup>2</sup> + y<sup>2</sup> = r<sup>2</sup>.***
+***Hint: The basic equation of a circle is x^2 + y^2 = r^2.***
 
 Personally, I had to watch this video:
 [¿En qué consiste el Método Montecarlo?](https://www.youtube.com/watch?v=WJjDr67frtM)
@@ -180,14 +190,14 @@ For example, given A = 3 -> 7 -> 8 -> 10 and B = 99 -> 1 -> 8 -> 10, return the 
 
 In this example, assume nodes with the same value are the exact same node objects.
 
-Do this in O(M + N) time (where M and N are the lengths of the lists) and constant space.
+Do this in ``O(M + N) time`` (where M and N are the lengths of the lists) and ``constant space``.
 
 ***
 
 [`Day 21`](./problems/Day21.py) | EASY | **Snapchat**
 
-Given an array of time intervals (start, end) for classroom lectures (possibly overlapping), find the minimum number of rooms required.
+Given an array of time intervals ``(start, end)`` for classroom lectures (possibly overlapping), find the minimum number of rooms required.
 
-For example, given [(30, 75), (0, 50), (60, 150)], you should return 2.
+For example, given ``[(30, 75), (0, 50), (60, 150)]``, you should ``return 2``.
 
 ***
