@@ -86,6 +86,17 @@ What if, instead of being able to climb 1 or 2 steps at a time, you could climb 
 
 ***
 
+[`Day 14`](./problems/Day14.py) | MEDIUM | **Google**
+
+The area of a circle is defined as πr^2. Estimate π to 3 decimal places using a Monte Carlo method.
+
+***Hint: The basic equation of a circle is x<sup>2</sup> + y<sup>2</sup> = r<sup>2</sup>.***
+
+Personally, I had to watch this video:
+[¿En qué consiste el Método Montecarlo?](https://www.youtube.com/watch?v=WJjDr67frtM)
+
+***
+
 [`Day 16`](./problems/Day16.py) | EASY | **Twitter**
 
 You run an e-commerce website and want to record the last ```N order ids``` in a log. Implement a data structure to accomplish this, with the following API:
