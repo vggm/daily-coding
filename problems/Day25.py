@@ -30,6 +30,8 @@ def regex_match ( regex: str, target: str ) -> bool:
     if curr_node in memo:
       return memo[curr_node]
     
+    temp = False
+
     if j >= len(regex) and i >= len(target): # check if we are at the end of the string
       return True 
     
@@ -45,15 +47,15 @@ def regex_match ( regex: str, target: str ) -> bool:
       # if exists, there is two ways:
       #   0 times
       #   1 or more times      
-      memo[curr_node] = (backtracking(i, j+2)                  # dont use the '*' -> 0 times
+      temp = (backtracking(i, j+2)                  # dont use the '*' -> 0 times
         or ( is_match and backtracking(i+1, j) ))   # check kleene closure -> 1 or more times
     
     else:
       # doesnt exists kleene closure, so go ahead checking character by character
-      memo[curr_node] = backtracking(i+1, j+1) 
+      temp = is_match and backtracking(i+1, j+1) 
   
-    memo[curr_node] = False  
-    return False
+    memo[curr_node] = temp
+    return temp
   
   return backtracking(0, 0)
   
@@ -68,4 +70,6 @@ if __name__ == '__main__':
   solver.solve( regex_match, '.*at', 'chat', expected=True )
   solver.solve( regex_match, '.*at', 'chats', expected=False )
   
+  solver.solve( regex_match, 'maa*ri*a', 'maaaaaara', expected=True )
+
   solver.show_tests()
