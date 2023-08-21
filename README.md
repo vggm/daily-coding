@@ -260,3 +260,13 @@ For example, given the regular expression ``"ra."`` and the string ``"ray"``, yo
 Given the regular expression ``".*at"`` and the string ``"chat"``, your function should ``return true``. The same regular expression on the string ``"chats"`` should ``return false``.
 
 ***
+
+[`Day 26`](./problems/Day26.py) | MEDIUM | **Google**
+
+Given a ``singly linked list`` and an ``integer k``, remove the kth last element from the list. k is guaranteed to be smaller than the length of the list.
+
+The list is very long, so making more than one pass is prohibitively expensive.
+
+Do this in constant space and in one pass.
+
+***

@@ -71,5 +71,6 @@ if __name__ == '__main__':
   solver.solve( regex_match, '.*at', 'chats', expected=False )
   
   solver.solve( regex_match, 'maa*ri*a', 'maaaaaara', expected=True )
+  solver.solve( regex_match, 'v*i*c*.or', 'vvvvvvvvviiiiiiiiitor', expected=True )
 
   solver.show_tests()
