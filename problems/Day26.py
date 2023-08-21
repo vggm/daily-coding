@@ -40,33 +40,25 @@ class SinglyLinkedList:
 
 def remove_last_kth_element ( elements: SinglyLinkedList, k: int ) -> int:
 
-  prev_node, target_node, curr_node = None, None, elements.head.next
+  prev_node = target_node = curr_node = elements.head.next
   
   cont = 0
   while curr_node:
-    
-    if cont == k:
-      target_node = elements.head.next
-    
+      
     if cont > k:
       target_node = target_node.next
       
-      if cont == k+1:
-        prev_node = elements.head.next
-      else:
+      if cont > k+1:
         prev_node = prev_node.next
         
     if cont < k + 2:
       cont += 1
       
     curr_node = curr_node.next
-    if curr_node is None:
-      if prev_node is not None:
-        prev_node.next = target_node.next
-      else:
-        elements.head.next = target_node.next
-  
-  return target_node.val if target_node is not None else -1
+
+  prev_node.next = target_node.next
+
+  return target_node.val
       
 
 if __name__ == '__main__':
