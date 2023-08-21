@@ -27,9 +27,15 @@ class SinglyLinkedList:
     node = Node(value)
     node.next = self.head.next
     self.head.next = node
-  
-  def head ( self ) -> Node:
-    return self.head.next if self.head.next else None
+    
+  def show( self ):
+    curr_node = self.head.next
+    while curr_node:
+      print(curr_node.val, end='')
+      curr_node = curr_node.next
+      if curr_node:
+        print(' -> ', end='')
+    print()
 
 
 def remove_last_kth_element ( elements: SinglyLinkedList, k: int ) -> int:
@@ -50,7 +56,7 @@ def remove_last_kth_element ( elements: SinglyLinkedList, k: int ) -> int:
       else:
         prev_node = prev_node.next
         
-    else:
+    if cont < k + 2:
       cont += 1
       
     curr_node = curr_node.next
@@ -65,28 +71,37 @@ def remove_last_kth_element ( elements: SinglyLinkedList, k: int ) -> int:
 
 if __name__ == '__main__':
   
-  solver = TestSolver( False )
+  solver = TestSolver( True )
   
   elements = SinglyLinkedList()
   for i in range( 10, 0, -1 ):
     elements.add( i )
-  
+    
+  print('\n### k: 3')
+  elements.show()
   solver.solve( remove_last_kth_element, elements, 3, expected=7 )
+  elements.show()
   
   elements = SinglyLinkedList()
   for i in range( 100, 0, -1 ):
     elements.add( i )
   
+  print('\n### k: 3')
+  elements.show()
   solver.solve( remove_last_kth_element, elements, 3, expected=97 )
+  elements.show()
   
   elements = SinglyLinkedList()
   target = randint(0, 45)
   for i in range( 45, -1, -1 ):
-    val = i
+    val = randint(0, 200)
     if target == 45-i:
-      val = expected = randint(0, 200)
+      expected = val
     elements.add( val )
   
+  print('\n### k:', target)
+  elements.show()
   solver.solve( remove_last_kth_element, elements, target, expected=expected )
+  elements.show()
   
   solver.show_tests()
