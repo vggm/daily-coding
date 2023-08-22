@@ -270,3 +270,13 @@ The list is very long, so making more than one pass is prohibitively expensive.
 Do this in constant space and in one pass.
 
 ***
+
+[`Day 27`](./problems/Day27.py) | EASY | **Facebook**
+
+Given a string of round, curly, and square open and closing brackets, return whether the brackets are balanced (well-formed).
+
+For example, given the string ``"([])[]({})"``, you should return true.
+
+Given the string ``"([)]"`` or ``"((()"``, you should return false.
+
+***
