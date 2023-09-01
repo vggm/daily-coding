@@ -338,3 +338,9 @@ For example, given the set ``{1, 2, 3}``, it should return ``{{}, {1}, {2}, {3},
 You may also use a list or array to represent a set.
 
 ***
+
+[`Day 38`](./problems/Day38.py) | HARD | **Microsoft**
+
+You have an N by N board. Write a function that, given N, returns the number of possible arrangements of the board where N queens can be placed on the board without threatening each other, i.e. no two queens share the same row, column, or diagonal.
+
+***
