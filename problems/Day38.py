@@ -12,10 +12,9 @@ column, or diagonal.
 from Solver import TestSolver
 
 
-def nqueen( N: int ) -> int:
+def nqueens( N: int ) -> int:
     queens_combinations = [0]
-    possible = [True] * N
-    bt(0,N,[ -1 for _ in range(N) ],possible,queens_combinations)
+    bt(0,N,[ -1 for _ in range(N) ],list(range(N)),queens_combinations)
     return queens_combinations[0]
 
 
@@ -36,7 +35,6 @@ def print_queens( queens: list[int] ) -> None:
 def check_queens( queens: list[int], e: int ) -> bool:
     
     for i in range(e):
-
         if abs(queens[i] - queens[e]) == abs(i - e):
                 return False
 
@@ -44,32 +42,28 @@ def check_queens( queens: list[int], e: int ) -> bool:
 
 
 def bt( e: int, n: int, queens: list[int], 
-        possible: list[bool], 
+        possible: list[int], 
         sol: list[int] ) -> None:
     
     if e == n:
-        print(queens)
+        print( queens )
         print_queens( queens )
         sol[0] += 1
 
     else: 
-        for i in range(n):
-            if possible[i]:
-                possible[i] = False
-                queens[e] = i
-                if check_queens(queens, e):
-                    bt(e+1, n, queens, possible, sol)
-                possible[i] = True
+        for i, opt in enumerate(possible):
+            queens[e] = opt
+            if check_queens(queens, e):
+                bt(e+1, n, queens, possible[:i] + possible[i+1:], sol)
 
 
 if __name__ == '__main__':
-    
+
     solver = TestSolver()
 
-    solver.solve( nqueen, 1, expected=1 )
-    solver.solve( nqueen, 4, expected=2 )
-    solver.solve( nqueen, 5, expected=10 )
-    solver.solve( nqueen, 8, expected=92 )
+    solver.solve( nqueens, 1, expected=1 )
+    solver.solve( nqueens, 4, expected=2 )
+    solver.solve( nqueens, 5, expected=10 )
+    solver.solve( nqueens, 8, expected=92 )
 
     solver.show_tests()
-
