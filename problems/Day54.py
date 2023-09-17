@@ -6,9 +6,14 @@ Sudoku is a puzzle where you're given a partially-filled 9 by 9 grid with digits
 Implement an efficient sudoku solver
 '''
 
-from Solver import PrintSolver
-
 N = 9 # num of rows or columns
+BOX_N = 3 # num of rows or columns per box
+
+def print_matrix( m: list[list[int]] ) -> None:
+  for row in m:
+    for v in row:
+      print(v, end=' ')
+    print()
 
 def valid( sudoku: list[list[int]], e: int, opt: int ) -> bool:
   i = e // N
@@ -25,33 +30,43 @@ def valid( sudoku: list[list[int]], e: int, opt: int ) -> bool:
       return False
     
   # check box
+  ir = i // BOX_N
+  jr = j // BOX_N
   
+  for row in range( BOX_N*ir, BOX_N*ir+BOX_N ):
+    for col in range( BOX_N*jr, BOX_N*jr+BOX_N ):
+      if (i, j) != (row, col) and sudoku[row][col] == opt:
+        return False
   
+  return True
   
 
 def backtracking( sudoku: list[list[int]], e=0 ) -> bool:
   i = e // N
   j = e % N
   
-  if e == N*N+1:
+  if e == N*N:
     return True
   
-  if sudoku[i][j] == 0:
-    return backtracking( sudoku, e + 1 )
+  if sudoku[i][j] != 0:
+    return backtracking( sudoku, e+1 )
   
-  for opt in range(1, 11):
+  for opt in range(1, 10):
     sudoku[i][j] = opt
-    
+    if valid( sudoku, e, opt ):
+      if backtracking( sudoku, e+1 ):
+        return True
     
   sudoku[i][j] = 0
   return False
 
-def sudoku_solver( sudoku: list[list[int]] ) -> list[list[int]]:
-  pass
+def sudoku_solver( sudoku: list[list[int]] ) -> list[list[int]] | int:
+  if backtracking( sudoku ):
+    return sudoku
+  
+  return -1
 
 if __name__ == '__main__':
-  
-  solver = PrintSolver()
   
   sudoku_easy = [ [2,9,0,0,0,0,0,7,0],
                   [3,0,6,0,0,8,4,0,0],
@@ -63,7 +78,12 @@ if __name__ == '__main__':
                   [0,0,1,2,0,0,3,0,6],
                   [0,3,0,0,0,0,0,5,9] ]
   
-  solver.solve( sudoku_solver, sudoku_easy )
+  res = sudoku_solver( sudoku_easy )
+  if res != -1:
+    print_matrix(res)
+  else:
+    print('No tiene resultado.')
+    
   
   sudoku_hard = [ [1,0,0,0,0,7,0,9,0],
                   [0,3,0,0,2,0,0,0,8],
@@ -75,4 +95,20 @@ if __name__ == '__main__':
                   [0,4,0,0,0,0,0,0,7],
                   [0,0,7,0,0,0,3,0,0] ]
   
-  solver.solve( sudoku_solver, sudoku_hard)
+  print()
+  res = sudoku_solver( sudoku_hard )
+  if res != -1:
+    print_matrix(res)
+  else:
+    print('No tiene resultado.')
+    
+  sudoku_hard = [ [1,0,0,0,0,7,0,9,0],
+                  [0,3,0,0,2,0,0,0,8],
+                  [0,0,9,6,0,0,5,0,0],
+                  [0,0,5,3,0,0,9,0,0],
+                  [0,1,0,0,8,0,0,0,2],
+                  [6,0,0,0,0,4,0,0,0],
+                  [3,0,0,0,0,0,0,1,0],
+                  [0,4,0,0,0,0,0,0,7],
+                  [0,0,7,0,0,0,3,0,0] ]
+    
