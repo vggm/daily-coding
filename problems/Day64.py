@@ -49,5 +49,6 @@ if __name__ == '__main__':
   
   solver = TestSolver()
   
+  ''' More than 5 takes too much time '''
   solver.solve( all_knight_tours, 5, expected=304 )
   
