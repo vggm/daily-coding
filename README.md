@@ -411,3 +411,11 @@ Implement a URL shortener with the following methods:
 * ``restore(short)``, which expands the shortened string into the original url. If no such shortened string exists, return null.
 
 Hint: What if we enter the same URL twice?
+
+***
+
+[`Day 64`](./problems/Day64.py) | HARD | **Google**
+
+A knight's tour is a sequence of moves by a knight on a chessboard such that all squares are visited once.
+
+Given N, write a function to return the number of knight's tours on an N by N chessboard.
