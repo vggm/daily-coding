@@ -419,3 +419,11 @@ Hint: What if we enter the same URL twice?
 A knight's tour is a sequence of moves by a knight on a chessboard such that all squares are visited once.
 
 Given N, write a function to return the number of knight's tours on an N by N chessboard.
+
+***
+
+[`Day 75`](./problems/Day75.py) | HARD | **Microsoft**
+
+Given an array of numbers, find the length of the longest increasing subsequence in the array. The subsequence does not necessarily have to be contiguous.
+
+For example, given the array `[0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15]`, the longest increasing subsequence has `length 6`: it is `0, 2, 6, 9, 11, 15`.
