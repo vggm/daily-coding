@@ -353,7 +353,7 @@ Integers can appear more than once in the list. You may assume all numbers in th
 
 For example, given ``S = [12, 1, 61, 5, 9, 2]`` and ``k = 24``, return ``[12, 9, 2, 1]`` since it sums up to 24.
 
-***
+*** 
 
 [`Day 43`](./problems/Day43.py) | EASY | **Amazon**
 
@@ -427,3 +427,13 @@ Given N, write a function to return the number of knight's tours on an N by N ch
 Given an array of numbers, find the length of the longest increasing subsequence in the array. The subsequence does not necessarily have to be contiguous.
 
 For example, given the array `[0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15]`, the longest increasing subsequence has `length 6`: it is `0, 2, 6, 9, 11, 15`.
+
+***
+
+[`Day 99`](./problems/Day99.py) | MEDIUM | **Microsoft**
+
+Given an unsorted array of integers, find the length of the longest consecutive elements sequence.
+
+For example, given `[100, 4, 200, 1, 3, 2]`, the longest consecutive element sequence is `[1, 2, 3, 4]`. Return its length: `4`.
+
+Your algorithm should run in `O(n) complexity`.
