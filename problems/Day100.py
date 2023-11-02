@@ -61,15 +61,15 @@ def shortest_path ( points: list[tuple[int]] ) -> int:
   
   curr_point = stack_points.pop(0)
   while stack_points:
-    point = stack_points[0]
+    next_point = stack_points[0]
     options_to_move = NON_DIAGONAL
-    if is_diagonal( start_point=curr_point, end_point=point ):
+    if is_diagonal( start_point=curr_point, end_point=next_point ):
       options_to_move = DIAGONAL
     
-    x, y = min_option( start_point=curr_point, end_point=point, move_options=options_to_move )
+    x, y = min_option( start_point=curr_point, end_point=next_point, move_options=options_to_move )
     
     curr_point = (curr_point[0]+x, curr_point[1]+y)
-    if curr_point == point:
+    if curr_point == next_point:
       stack_points.pop(0)
     
     steps += 1
