@@ -10,6 +10,49 @@ For example,
 
 from Solver import TestSolver
 
+def contiguous_elements_sum_opt ( nums: list[int], K: int ) -> list[int]:
+  
+  memo = {}
+  current_sum = 0
+  start, end = 0, -1
+  memo[0] = -1
+  for i, n in enumerate(nums):
+    current_sum += n
+    if memo.get( current_sum - K ) is not None:
+      start = memo[ current_sum - K ] + 1
+      end = i
+      break
+    
+    memo[current_sum] = i
+  
+  if end == -1:
+    return []
+  
+  return nums[start:end+1]
+
+
+def contiguous_elements_sum_opt_v2 ( nums: list[int], K: int ) -> list[int]:
+  
+  if len(nums) == 0:
+    return []
+  
+  current_sum = 0
+  start, end = 0, 0
+  for n in nums:
+    
+    current_sum += n
+    end += 1
+    
+    if current_sum > K:
+      current_sum -= nums[start]
+      start += 1
+      
+    if current_sum == K:
+      return nums[start:end]
+    
+  return []
+
+
 def contiguous_elements_sum ( nums: list[int], K: int ) -> list[int]:
   
   parcial_sum = 0
@@ -31,7 +74,7 @@ if __name__ == '__main__':
   solver = TestSolver(False)
   
   solver.solve(
-    contiguous_elements_sum,
+    contiguous_elements_sum_opt_v2,
     [1, 2, 3, 4, 5],
     9,
     expected=[2, 3, 4]
