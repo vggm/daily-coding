@@ -440,7 +440,7 @@ Your algorithm should run in `O(n) complexity`.
 
 ***
 
-[`Day 100`](./problems/Day100.py) | HARD | **Google**
+[`Day 100`](./problems/Day100.py) | EASY | **Google**
 
 You are in an infinite 2D grid where you can move in any of the 8 directions:
 
@@ -466,3 +466,11 @@ Output: 2
 ```
 
 It takes 1 step to move from `(0, 0)` to `(1, 1)`. It takes one more step to move from `(1, 1)` to `(1, 2)`.
+
+***
+
+[`Day 104`](./problems/Day104.py) | EASY | **Google**
+
+Determine whether a doubly linked list is a palindrome. What if it’s singly linked?
+
+For example, `1 -> 4 -> 3 -> 4 -> 1` returns `True` while `1 -> 4` returns `False`.
