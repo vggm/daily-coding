@@ -469,6 +469,14 @@ It takes 1 step to move from `(0, 0)` to `(1, 1)`. It takes one more step to mov
 
 ***
 
+[`Day 102`](./problems/Day102.py) | MEDIUM | **Lyft**
+
+Given a list of integers and a number K, return which contiguous elements of the list sum to K.
+
+For example, if the list is `[1, 2, 3, 4, 5]` and `K is 9`, then it should return `[2, 3, 4]`, since `2 + 3 + 4 = 9`.
+
+***
+
 [`Day 104`](./problems/Day104.py) | EASY | **Google**
 
 Determine whether a doubly linked list is a palindrome. What if it’s singly linked?
