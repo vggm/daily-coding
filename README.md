@@ -430,6 +430,12 @@ For example, given the array `[0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7,
 
 ***
 
+[`Day 78`](./problems/Day78.py) | MEDIUM | **Google**
+
+Given k sorted singly linked lists, write a function to merge all the lists into one sorted singly linked list.
+
+***
+
 [`Day 99`](./problems/Day99.py) | MEDIUM | **Microsoft**
 
 Given an unsorted array of integers, find the length of the longest consecutive elements sequence.
